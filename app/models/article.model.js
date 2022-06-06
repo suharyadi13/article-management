@@ -1,14 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
   const Article = sequelize.define("tbl_article", {
     title: {
-      type: Sequelize.STRING(150),
-      allowNull:false,
-      validate: {
-        len:[10,150],
-      }
+      type: Sequelize.TEXT,
+      allowNull:false
     },
     description: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: false
     },
     short_description: {
