@@ -45,7 +45,7 @@ exports.create = (req, res) => {
 // Retrieve all Articles from the database.
 exports.findAll = (req, res) => {
   const title = req.param.search;
-  var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
+  var condition = title ? { title: { [Op.iLike]: `%${title}%` } ,is_visible:true} : null;
   console.log(condition);
   Article.findAll({ where: condition })
     .then(data => {
