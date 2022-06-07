@@ -1,9 +1,11 @@
 const express = require("express");
-// const bodyParser = require("body-parser"); /* deprecated */
 const cors = require("cors");
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+
+
 const app = express();
 app.use(bodyParser.json())
+ 
 
 const path = __dirname + '/app/views/';
 app.use(express.static(path));
@@ -41,6 +43,7 @@ require("./app/routes/article.routes")(app);
 require("./app/routes/articleCat.routes")(app);
 require("./app/routes/auth.routes")(app);
 
+initRoutes(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
