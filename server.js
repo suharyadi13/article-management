@@ -43,7 +43,7 @@ require("./app/routes/article.routes")(app);
 require("./app/routes/articleCat.routes")(app);
 require("./app/routes/auth.routes")(app);
 
-initRoutes(app);
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
